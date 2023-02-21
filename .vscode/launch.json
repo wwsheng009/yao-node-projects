@@ -1,0 +1,42 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch yao-node-template",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}",
+            "preLaunchTask": "tsc: build-template",
+            "cwd": "${workspaceFolder}/packages/yao-node-template",
+            "outFiles": [
+                //"sourceMap": true
+                "${workspaceFolder}/packages/yao-node-template/dist/**/*.js"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch yao-node-client",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}",
+            "preLaunchTask": "tsc: build-client",
+            "cwd": "${workspaceFolder}/packages/yao-node-client",
+            "outFiles": [
+                //"sourceMap": true
+                "${workspaceFolder}/packages/yao-node-client/dist/**/*.js"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+        }
+    ]
+}

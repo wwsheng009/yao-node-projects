@@ -9,7 +9,7 @@
     "dev-yao-template": "pnpm --filter \"yao-node-template\" dev",
     "build-template": "turbo run build --filter \"yao-node-template\"",
     "build-client": "turbo run build --filter \"yao-node-client\"",
-    "turbo-test": "turbo run test",
+    "turbo-dev": "turbo run --filter \"yao-node-template\" dev",
     "turbo-build": "turbo run build",
     "start": "pnpm run --filter '*' start"
   },

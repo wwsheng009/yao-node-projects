@@ -5,10 +5,10 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "build-template",
+            "script": "build-server",
             "group": "build",
             "problemMatcher": [],
-            "label": "tsc: build-template",
+            "label": "tsc: build-server",
             "detail": "tsc"
         },
         {

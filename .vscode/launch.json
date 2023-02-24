@@ -7,19 +7,92 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch yao-node-template",
+            "name": "Launch yao-node-server",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${file}",
-            "preLaunchTask": "tsc: build-template",
-            "cwd": "${workspaceFolder}/packages/yao-node-template",
+            "preLaunchTask": "tsc: build-server",
+            "cwd": "${workspaceFolder}/packages/yao-node-server",
             "outFiles": [
                 //"sourceMap": true
-                "${workspaceFolder}/packages/yao-node-template/dist/**/*.js"
+                "${workspaceFolder}/packages/yao-node-server/dist/**/*.js"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "ts-node server file",
+            "runtimeExecutable": "node",
+            "cwd": "${workspaceFolder}/packages/yao-node-server",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register/transpile-only", //不检查类型会更快一些
+                // "ts-node/register"
+            ],
+            "args": [
+                "-r",
+                "tsconfig-paths/register", //解析@=>src
+                "${file}"
+            ],
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "ts-node template ",
+            "runtimeExecutable": "node",
+            "cwd": "${workspaceFolder}/packages/yao-app-ts-template",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register/transpile-only", //不检查类型会更快一些
+                // "ts-node/register"
+            ],
+            "args": [
+                "-r",
+                "tsconfig-paths/register", //解析@=>src
+                "${file}"
+            ],
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**"
+            ]
+        },
+        ,
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "ts-node app ",
+            "runtimeExecutable": "node",
+            "cwd": "${workspaceFolder}/packages/yao-node-app-ts",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register/transpile-only", //不检查类型会更快一些
+                // "ts-node/register"
+            ],
+            "args": [
+                "-r",
+                "tsconfig-paths/register", //解析@=>src
+                "${file}"
+            ],
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**"
+            ]
         },
         {
             "type": "node",
@@ -37,6 +110,30 @@
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "ts-node client ",
+            "runtimeExecutable": "node",
+            "cwd": "${workspaceFolder}/packages/yao-node-client",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register/transpile-only", //不检查类型，会更快一些
+                // "ts-node/register"
+            ],
+            "args": [
+                "-r",
+                "tsconfig-paths/register", //解析@=>src
+                "${file}"
+            ],
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**"
+            ]
         }
     ]
 }

@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-yao-client": "pnpm --filter \"yao-node-client\" dev",
-    "dev-yao-template": "pnpm --filter \"yao-node-template\" dev",
-    "build-template": "turbo run build --filter \"yao-node-template\"",
+    "dev-yao-server": "pnpm --filter \"yao-node-server\" dev",
+    "build-server": "turbo run build --filter \"yao-node-server\"",
     "build-client": "turbo run build --filter \"yao-node-client\"",
-    "turbo-dev": "turbo run --filter \"yao-node-template\" dev",
+    "turbo-dev": "turbo run --filter \"yao-node-server\" dev",
     "turbo-build": "turbo run build",
     "start": "pnpm run --filter '*' start"
   },

@@ -15,15 +15,16 @@ cd packages
 
 
 mkdir yao-node-client
-mkdir yao-node-template
+mkdir yao-node-server
 
-cd yao-node-template
+#给yao-node-server项目增加依赖
+cd yao-node-server
 pnpm add yao-node-client --workspace
 
 #或是在根目录
 #使用以下命令，给yao-node-template添加yao-node-client依赖。
 #–filter 后加上项目名称是指定对某个项目进行操作。
-pnpm add yao-node-client --workspace --filter yao-node-template
+pnpm add yao-node-client --workspace --filter yao-node-server
 
 ```
 

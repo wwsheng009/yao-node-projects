@@ -26,11 +26,14 @@ importers:
       ts-node: ^10.9.1
       tsc-alias: ^1.8.2
       tsconfig-paths: ^4.1.2
+      tsx: ^3.12.3
       typescript: ^4.9.5
+      yao-app-ts-types: workspace:^1.0.0
       yao-node-client: workspace:^1.0.0
       yao-node-server: workspace:^1.0.0
       yargs: ^17.7.1
     dependencies:
+      yao-app-ts-types: link:../yao-app-ts-types
       yao-node-client: link:../yao-node-client
       yao-node-server: link:../yao-node-server
       yargs: 17.7.1
@@ -51,6 +54,7 @@ importers:
       ts-node: 10.9.1_tncu2ai53lzgmizdedur7lbibe
       tsc-alias: 1.8.2
       tsconfig-paths: 4.1.2
+      tsx: 3.12.3
       typescript: 4.9.5
 
   packages/yao-app-ts-types:
@@ -67,9 +71,6 @@ importers:
       ts-node: 10.9.1_uayvamxqnl5yeiojjysxwopmsy
       tsconfig-paths: 4.1.2
       typescript: 4.9.5
-
-  packages/yao-node-app:
-    specifiers: {}
 
   packages/yao-node-client:
     specifiers:
@@ -161,11 +162,13 @@ importers:
       tsc-alias: ^1.8.2
       tsconfig-paths: ^4.1.2
       typescript: ^4.9.5
-      yao-node-client: workspace:^1.0.0
+      yao-app-ts-types: ^1.0.0
+      yao-node-client: ^1.0.1
     dependencies:
       express: 4.18.2
       express-fileupload: 1.4.0
       express-list-endpoints: 6.0.0
+      yao-app-ts-types: link:../yao-app-ts-types
       yao-node-client: link:../yao-node-client
     devDependencies:
       '@rollup/plugin-alias': 4.0.3_rollup@3.17.2
@@ -537,6 +540,27 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
+    dev: true
+
+  /@esbuild-kit/cjs-loader/2.4.2:
+    resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==}
+    dependencies:
+      '@esbuild-kit/core-utils': 3.1.0
+      get-tsconfig: 4.4.0
+    dev: true
+
+  /@esbuild-kit/core-utils/3.1.0:
+    resolution: {integrity: sha512-Uuk8RpCg/7fdHSceR1M6XbSZFSuMrxcePFuGgyvsBn+u339dk5OeL4jv2EojwTN2st/unJGsVm4qHWjWNmJ/tw==}
+    dependencies:
+      esbuild: 0.17.10
+      source-map-support: 0.5.21
+    dev: true
+
+  /@esbuild-kit/esm-loader/2.5.5:
+    resolution: {integrity: sha512-Qwfvj/qoPbClxCRNuac1Du01r9gvNOT+pMYtJDapfB1eoGN1YlJ1BixLyL9WVENRx5RXgNLdfYdx/CuswlGhMw==}
+    dependencies:
+      '@esbuild-kit/core-utils': 3.1.0
+      get-tsconfig: 4.4.0
     dev: true
 
   /@esbuild/android-arm/0.17.10:
@@ -2170,6 +2194,10 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /get-tsconfig/4.4.0:
+    resolution: {integrity: sha512-0Gdjo/9+FzsYhXCEFueo2aY1z1tpXrxWZzP7k8ul9qt1U5o8rYJwTJYmaeHdrVosYIVYkOy2iwCJ9FdpocJhPQ==}
+    dev: true
+
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -3499,6 +3527,13 @@ packages:
       source-map: 0.6.1
     dev: true
 
+  /source-map-support/0.5.21:
+    resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
+    dependencies:
+      buffer-from: 1.1.2
+      source-map: 0.6.1
+    dev: true
+
   /source-map/0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
@@ -3786,6 +3821,17 @@ packages:
 
   /tslib/2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
+    dev: true
+
+  /tsx/3.12.3:
+    resolution: {integrity: sha512-Wc5BFH1xccYTXaQob+lEcimkcb/Pq+0en2s+ruiX0VEIC80nV7/0s7XRahx8NnsoCnpCVUPz8wrqVSPi760LkA==}
+    hasBin: true
+    dependencies:
+      '@esbuild-kit/cjs-loader': 2.4.2
+      '@esbuild-kit/core-utils': 3.1.0
+      '@esbuild-kit/esm-loader': 2.5.5
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /turbo-darwin-64/1.8.1:

@@ -1,0 +1,18 @@
+[submodule "packages/yao-admin-ts"]
+	path = packages/yao-admin-ts
+	url = git@github.com:wwsheng009/yao-admin-ts.git
+[submodule "packages/yao-app-debugger"]
+	path = packages/yao-app-debugger
+	url = git@github.com:wwsheng009/yao-app-debugger.git
+[submodule "packages/yao-app-ts-template"]
+	path = packages/yao-app-ts-template
+	url = git@github.com:wwsheng009/yao-app-ts-template.git
+[submodule "packages/yao-app-ts-types"]
+	path = packages/yao-app-ts-types
+	url = git@github.com:wwsheng009/yao-app-ts-types.git
+[submodule "packages/yao-node-client"]
+	path = packages/yao-node-client
+	url = git@github.com:wwsheng009/yao-node-client.git
+[submodule "packages/yao-node-server"]
+	path = packages/yao-node-server
+	url = git@github.com:wwsheng009/yao-node-server.git
